@@ -17,7 +17,7 @@ file_path = "debt_data.json"
 
 def load_data():
     try:
-        with open(file_path, "r") as file:
+        with open(file_path, "r", encoding='utf-8') as file:
             data = json.load(file)
             return pd.DataFrame(data)
     except FileNotFoundError:
@@ -27,7 +27,7 @@ def load_data():
 
 
 def save_data(df):
-    with open(file_path, "w") as file:
+    with open(file_path, "w", encoding='utf-8') as file:
         json.dump(df.to_dict(orient="records"), file)
 
 
