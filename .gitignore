@@ -161,3 +161,4 @@ cython_debug/
 
 # Ignore the financial db :P
 debt_data.json
+*.json
