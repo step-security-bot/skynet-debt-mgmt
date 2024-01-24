@@ -7,8 +7,13 @@ jobs:
     name: GitHub Action for pylint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@61b9e3751b92087fd0b06925ba6dd6314e06f089 # master
       - name: GitHub Action for pylint
-        uses: zerodaysec/github-action-for-python@main
+        uses: zerodaysec/github-action-for-python@338d10ca0995b6e2eca03c2e66176e20c0e1343a # main
         with:
           args: pylint **/*.py

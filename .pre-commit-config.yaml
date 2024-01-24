@@ -68,3 +68,7 @@ repos:
           - --max-line-length=80
         # - --ignore-imports=yes
         # - -d duplicate-code
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.16.3
+    hooks:
+      - id: gitleaks
